@@ -89,6 +89,8 @@ def load_default_model():
 # For demonstration, limit to the first 5000 job postings.
 fine_tuned_embeddings = torch.tensor(load_fine_tuned_embeddings()[:5000], device=device)
 default_embeddings = torch.tensor(load_default_embeddings()[:5000], device=device)
+fine_tuned_embeddings = torch.tensor(fine_tuned_embeddings, dtype=torch.float32)
+default_embeddings = torch.tensor(default_embeddings, dtype=torch.float32)
 job_postings = load_job_postings()[:5000]
 fine_tuned_model = load_fine_tuned_model()
 default_model = load_default_model()
